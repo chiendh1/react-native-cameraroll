@@ -512,8 +512,6 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
     float height = media.getInt(heightIndex);
 
     String mimeType = media.getString(mimeTypeIndex);
-
-    if(width <=0 || height <= 0) return false;
     
     if (mimeType != null
         && mimeType.startsWith("video")) {
@@ -569,6 +567,10 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
         return false;
       }
     }
+
+    if(width <= 0 || height <= 0) return false;
+
+
     image.putDouble("width", width);
     image.putDouble("height", height);
     node.putMap("image", image);
