@@ -513,6 +513,8 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
 
     String mimeType = media.getString(mimeTypeIndex);
 
+    if(width <=0 || height <= 0) return false;
+    
     if (mimeType != null
         && mimeType.startsWith("video")) {
       try {
