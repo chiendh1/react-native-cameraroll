@@ -506,6 +506,9 @@ public class CameraRollModule extends ReactContextBaseJavaModule {
     Uri photoUri = Uri.parse("file://" + media.getString(dataIndex));
     File file = new File(media.getString(dataIndex));
     String strFileName = file.getName();
+    long length = file.length();
+
+    image.putString("fileSize", length + "");
     image.putString("uri", photoUri.toString());
     image.putString("filename", strFileName);
     float width = media.getInt(widthIndex);

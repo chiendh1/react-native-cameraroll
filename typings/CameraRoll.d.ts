@@ -35,6 +35,7 @@ declare namespace CameraRoll {
       type: string,
       group_name: string,
       image: {
+        fileSize: string,
         filename: string,
         uri: string,
         height: number,
